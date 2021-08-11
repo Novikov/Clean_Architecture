@@ -6,14 +6,16 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import com.example.clean_architecture.R
+import com.example.clean_architecture.data.repository.UserRepositoryImpl
 import com.example.clean_architecture.domain.models.SaveUserNameParam
 import com.example.clean_architecture.domain.usecases.GetUserNameUseCase
 import com.example.clean_architecture.domain.usecases.SaveUserNameUseCase
 
 class MainActivity : AppCompatActivity() {
 
-    private val getUserNameUseCase = GetUserNameUseCase()
-    private val saveUserNameUseCase = SaveUserNameUseCase()
+    private val userRepository by lazy { UserRepositoryImpl(context = applicationContext) }
+    private val getUserNameUseCase by lazy { GetUserNameUseCase(repository = userRepository) }
+    private val saveUserNameUseCase by lazy {SaveUserNameUseCase(userRepository = userRepository)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
