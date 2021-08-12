@@ -7,13 +7,14 @@ import android.widget.EditText
 import android.widget.TextView
 import com.example.clean_architecture.R
 import com.example.clean_architecture.data.repository.UserRepositoryImpl
+import com.example.clean_architecture.data.storage.UserStorageImpl
 import com.example.clean_architecture.domain.models.SaveUserNameParam
 import com.example.clean_architecture.domain.usecases.GetUserNameUseCase
 import com.example.clean_architecture.domain.usecases.SaveUserNameUseCase
 
 class MainActivity : AppCompatActivity() {
 
-    private val userRepository by lazy { UserRepositoryImpl(context = applicationContext) }
+    private val userRepository by lazy { UserRepositoryImpl(userStorage = UserStorageImpl(applicationContext)) }
     private val getUserNameUseCase by lazy { GetUserNameUseCase(repository = userRepository) }
     private val saveUserNameUseCase by lazy {SaveUserNameUseCase(userRepository = userRepository)}
 
