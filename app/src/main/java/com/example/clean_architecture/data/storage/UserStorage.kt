@@ -1,9 +1,8 @@
 package com.example.clean_architecture.data.storage
 
-import com.example.clean_architecture.domain.models.SaveUserNameParam
-import com.example.clean_architecture.domain.models.UserName
+import com.example.clean_architecture.data.storage.models.User
 
 interface UserStorage {
-    fun save(saveParam: SaveUserNameParam): Boolean
-    fun get(): UserName
+    fun save(user: User): Boolean
+    fun get(): User
 }
