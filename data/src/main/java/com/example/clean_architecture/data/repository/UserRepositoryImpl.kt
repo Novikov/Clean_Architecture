@@ -2,9 +2,9 @@ package com.example.clean_architecture.data.repository
 
 import com.example.clean_architecture.data.storage.models.User
 import com.example.clean_architecture.data.storage.UserStorage
-import com.example.clean_architecture.domain.models.SaveUserNameParam
-import com.example.clean_architecture.domain.models.UserName
-import com.example.clean_architecture.domain.repository.UserRepository
+import com.example.domain.models.SaveUserNameParam
+import com.example.domain.models.UserName
+import com.example.domain.repository.UserRepository
 
 class UserRepositoryImpl(val userStorage: UserStorage) : UserRepository {
 

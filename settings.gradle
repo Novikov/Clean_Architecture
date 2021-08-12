@@ -1,2 +1,4 @@
 rootProject.name = "Clean_Architecture"
 include ':app'
+include ':data'
+include ':domain'

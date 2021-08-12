@@ -7,10 +7,10 @@ import android.widget.EditText
 import android.widget.TextView
 import com.example.clean_architecture.R
 import com.example.clean_architecture.data.repository.UserRepositoryImpl
-import com.example.clean_architecture.data.storage.UserStorageImpl
-import com.example.clean_architecture.domain.models.SaveUserNameParam
-import com.example.clean_architecture.domain.usecases.GetUserNameUseCase
-import com.example.clean_architecture.domain.usecases.SaveUserNameUseCase
+import com.example.clean_architecture.data.storage.sharedprefs.UserStorageImpl
+import com.example.domain.models.SaveUserNameParam
+import com.example.domain.usecases.GetUserNameUseCase
+import com.example.domain.usecases.SaveUserNameUseCase
 
 class MainActivity : AppCompatActivity() {
 
